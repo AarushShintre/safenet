@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{%block content%}
+
+<link rel="stylesheet" href="../static/css/quizPage.css">
+    
+<div class="container">
+   <div class="content">
+       <h1> Quizzes </h1>
+       <br>
+        <div class="quiz-section">
+            <h3>Cybersecurity 101</h3>
+                <div class="quiz">
+                    <a href="/quiz1" id = "link"><i class="fa fa-arrow-right"></i> Cybersecurity Basics</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+        </div>
+        <div class="quiz-section">
+            <h3>Online Scams </h3>
+                <div class="quiz">
+                    <a href="/quiz2"  id = "link"><i class="fa fa-arrow-right"></i> Types of online scams and avoiding them</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+        </div>
+        <div class="quiz-section">
+            <h3>Behaving Responsibly online</h3>
+                <div class="quiz">
+                    <a href="/quiz3" id = "link"> <i class="fa fa-arrow-right"></i> Online Responsibility Quiz</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+        </div>
+        <div class="quiz-section">
+            <h3>Trivia</h3>
+                <div class="quiz">
+                    <a href="/quiz4" id = "link"> <i class="fa fa-arrow-right"></i> Trivia</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
+        </div>
+   </div>
+    <div class="funFactBox">
+      <!-- JS will add content here -->
+     </div>
+</div>
+
+<script src="../static/js/quizPage.js"></script>
+
+{%endblock%}

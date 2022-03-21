@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{%block content%}
+<link rel="stylesheet" href="../static/css/login.css">
+<div class="container">
+    <form action ="register" method = "POST" class="form" >
+        {% with messages = get_flashed_messages() %}
+        {%if messages%}
+            {%for msg in messages%}
+                <p id = "flashSignUp">{{msg}}</p>
+            {%endfor%}
+        {%endif%}
+        {%endwith%}
+    <h1>Sign Up</h1>
+    <br>
+    <input type="text" placeholder="Username" type = required name = "username" id ="input">
+    <input type="email" placeholder="E-mail" type = required name = "email" id ="input"> 
+    <div class = "password">
+        <input type="password" placeholder="Password" type = required name= "psw" id="psw">
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+    </div>
+    <button type="submit" id="submit-button" >Sign Up</button>
+    <br>
+    <br>
+    <a href="/login" style="text-decoration:none;">Already have an account?</a>
+    </form>
+</div>
+<script src="../static/js/loginSignUp.js"></script>
+{%endblock%}
+
+    

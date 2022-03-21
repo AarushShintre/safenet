@@ -1,0 +1,66 @@
+{%extends "index.html"%}
+{%block content%}
+<link rel="stylesheet" href="../static/css/quiz.css">
+
+<!-- Info Box which can be loaded if start quiz is clicked -->
+<div class="infoBox">
+    <div class="info-title"><span>Some Rules of this Quiz</span></div>
+    <div class="info-list">
+        <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+        <div class="info">2. Once you select your answer, it can't be undone.</div>
+        <div class="info">3. You can't select any option once time goes off.</div>
+        <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+        <div class="info">5. You'll get points on the basis of your correct answers.</div>
+    </div>
+    <div class="buttons">
+        <button class="quit">Exit Quiz</button>
+        <button class="restart">Continue</button>
+    </div>
+</div>
+
+<div class="quizBox">
+    
+    <header>
+        <div class="title">Importance of cybersecurity quiz </div>
+        <div class="timer">
+            <div class="time_left_txt">Time Left</div>
+            <div class="timer_sec">15</div>
+            
+        </div>
+        <div class="timeLine"></div>
+    </header>
+    <section>
+        <div class="quesText">
+
+        </div>
+        <div class="optionList">
+
+        </div>
+    </section>
+    
+    <footer>
+    
+        <div class="totalQues">
+            <!-- Question Count Number from script.js -->
+        </div>
+        <button class="next_btn">Next</button>
+    </footer>
+</div>
+
+<div class="resultBox">
+    <div class="icon">
+        <i class="fa fa-crown"></i>
+    </div>
+    <div class="score_text">
+       <!-- score from script.js -->
+    </div>
+    <div class="buttons">
+        <button class="restart">Replay Quiz</button>
+        <button class="quit"onclick = "quiz">Quit Quiz</button>
+    </div>
+</div>
+
+<script src="../static/js/quiz4.js"></script>
+<script src="../static/js/script.js"></script>
+
+{%endblock%}

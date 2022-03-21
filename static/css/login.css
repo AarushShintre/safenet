@@ -1,0 +1,128 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+body{
+    display: flex;
+}
+.container {
+    top: 20%;
+    position: absolute;
+    color:   rgb(35, 93, 160);
+    padding: 70px;
+    height: 600px;
+    width: 700px;
+    align-content: center;
+    justify-content: center;
+}
+
+
+form {
+    box-shadow: 8px 4px 8px 4px  rgba(22, 22, 22, 0.2);
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px;
+
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+.password {
+    display: inline-flex;
+    width: 250px;
+    margin-bottom: 1em;
+
+}
+.password input{
+    border-radius: 3px;
+    appearance: none;
+    outline: 0;
+    background-color: rgba(45, 197, 224, 0.2);
+    border:none;
+    width: 92%;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 300;
+  }
+.password i{
+    font-size: 20px;
+    width :8%;
+    padding: 10px 30px 0 12px;
+    cursor: pointer;
+    color: white;
+    background-color:  rgb(35, 93, 160);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+form #input{
+    appearance: none;
+    outline: 0;
+    border:none;
+    background-color: rgba(45, 197, 224, 0.2);
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 300;
+}
+form #input:hover, .password input:hover{
+    background-color: rgba(45, 197, 224, 0.4);
+}
+form #input:focus ,.password input:focus{
+    background-color: rgba(45, 197, 224, 0.6);
+    color: rgb(13, 31, 41);;
+}
+form button {
+    appearance: none;
+    outline: 0;
+    background-color: rgb(35, 93, 160);
+    border: 0;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+form button:hover {
+    font-size: 20px;
+    width: 270px;
+
+}
+
+#flashLogin{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    color:rgb(236, 233, 233);
+    background: rgb(230, 131, 131);
+    border-radius: 3px;
+    padding:15px;
+    box-shadow: 8px 4px 8px 4px  rgba(22, 22, 22, 0.2);
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  #flashSignUp{
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+    color: rgb(236, 233, 233);
+    background: rgb(219, 111, 111);
+    border-radius: 3px;
+    padding:15px;
+    box-shadow: 8px 4px 8px 4px  rgba(22, 22, 22, 0.2);
+    border-radius: 10px;
+  }

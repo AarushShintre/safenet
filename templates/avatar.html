@@ -1,0 +1,31 @@
+{%extends "index.html"%}
+{%block content%}
+<link rel="stylesheet" href="../static/css/avatar.css">
+<div class="msg">
+       
+</div>
+<div class= "imgContainer">
+    <h1>Pick an icon for your profile</h1>
+    
+    <hr>
+    <div class = "selectedPicDiv">
+        <img src="../static/images/blank_profile.png" id = "selectedPic" >   
+    </div>
+    <div id= "iconGrid">
+        <button onclick="choice1()"><img src="../static/images/avatar1.png" id = "avatar" ></button>
+        <button onclick="choice6()"><img src="../static/images/avatar6.png" id = "avatar" ></button>
+        <button onclick="choice5()"><img src="../static/images/avatar5.png" id = "avatar" ></button>
+        <button onclick="choice8()"><img src="../static/images/avatar8.png" id = "avatar" ></button>
+        <br>
+        <button onclick="choice4()"><img src="../static/images/avatar4.png" id = "avatar" ></button>
+        <button onclick="choice2()"><img src="../static/images/avatar2.png" id = "avatar" ></button>
+        <button onclick="choice3()"><img src="../static/images/avatar3.png" id = "avatar" ></button>
+        <button onclick="choice7()"><img src="../static/images/avatar7.png" id = "avatar" ></button> 
+    </div> 
+    <div class="avatarBtn">
+        <a href="profile" id = "backBtn">Go Back to Profile Page</a>  
+        <button onclick="save()" id = "save">Save Changes</button>
+    </div>
+</div>
+<script src="../static/js/avatar.js"></script>
+{%endblock%}

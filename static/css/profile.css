@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  
+  
+.container{
+    left: 38%;
+    top: 25%;
+    position: absolute;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 4px rgba(19, 19, 19, 0.2);
+    padding: 50px;
+    width: 350px;
+  }
+
+  
+  #photo{
+    left: 20%;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    border-radius: 50%;
+    margin-bottom: 25px;
+  }
+
+
+  h2, h1{
+    padding: 10px;
+    text-align: left;
+    margin: 10px;
+  }
+  
+
+#uploadBtn{
+  text-decoration: none;
+  position: absolute;
+  bottom: 55%;
+  left: 46%;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  display: block;
+}
+
+#uploadBtn:hover{
+  font-size: 17px;
+}

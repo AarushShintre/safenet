@@ -1,0 +1,19 @@
+{%extends "index.html"%}
+{%block content%}
+<link rel="stylesheet" href="../static/css/profile.css">
+<div class="container">
+    <div id = "profilePicDiv">
+      <img src="../static/images/blank_profile.png" id="photo">
+    </div>
+    <a href="avatar" id="uploadBtn" >Edit</a>
+  <h1 style="margin:15px; text-align:center;">Hello, {{name}}</h1>
+  <h1 style="text-align:center; font-size:23px; margin-bottom:15px;">Points Scored are {{xp}}</h1>
+
+</div>
+<script src="../static/js/profile.js"></script>
+{%endblock%}
+
+        
+
+
+        

@@ -1,0 +1,106 @@
+
+#avatar{
+    height: 95px;
+    width: 95px;
+    margin: 20px;
+    cursor: pointer;
+}
+#selectedPic{
+    position: relative;
+    
+    height: 115px;
+    width: 115px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.imgContainer{
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    left: 30%;
+    top: 15%;
+    position: absolute;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 4px rgba(19, 19, 19, 0.2);
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+
+#uploadSection{
+    text-decoration: none;
+    height: 35px;
+    width: 100px;
+    position:absolute;
+    bottom: 62%;
+    left: 50%;
+    border-bottom-left-radius:30cm;
+    border-bottom-right-radius: 30cm;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: azure;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+
+button{
+   border: 0px;
+   background-color: white;
+}
+.avatarBtn{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#save, #backBtn{
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width: 30%;
+    border-radius: 5px;
+    background-color: rgb(13, 31, 41);
+    color: azure;
+    padding: 7px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+#save:hover, #backBtn:hover{
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    width: 35%;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 7px;
+    
+
+}
+
+
+h1, h3{
+    margin:20px;
+    font-family: 'Lato', sans-serif;
+}
+.msg{
+    display:inline-flex ;
+}
+#success{
+    background-color:rgb(253, 251, 247);
+    color:rgb(13, 31, 41);
+    padding: 8px;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+
+   
+}
+
