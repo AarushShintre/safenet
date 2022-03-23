@@ -9,6 +9,7 @@ const timeLine = document.querySelector("header .timeLine");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 const nav = document.querySelector(".topnav");
+const celeb = document.querySelector(".celebBox");
 
 infoBox.classList.add("activeInfo"); 
 continueBtn.style.pointerEvents = "none";
@@ -149,6 +150,14 @@ function showResult(){
             body:userScore,
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
+        fetch('/quizScore')
+        .then(function (response) {
+            return response.text();
+        }).then(function (text) {
+            celeb.innerHTML = `
+                <h1>Great work! You have scored ${text} points in total.</h1>
+            `
+        });
 }
 function startTimer(time){
     counter = setInterval(timer, 1000);

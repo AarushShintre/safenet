@@ -140,10 +140,6 @@ def quizScore():
     con.commit()
     return render_template("quiz1.html")
         
-            
-
-       
-
 #login route
 @app.route("/login", methods = ["GET", "POST"])
 def login():
