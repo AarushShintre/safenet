@@ -1,5 +1,6 @@
 var el = document.querySelector(".profilePicNavDiv"); 
 var dropdown = document.querySelector(".dropdown"); 
+var admin = document.querySelector(".admin"); 
 
 fetch('/profilePic')
     .then(function (response) {
@@ -19,8 +20,7 @@ fetch('/loggedIn')
         if(json == "true"){
             dropdown.style.display = "block";
         }else{
-            console.log("else")
-            console.log(json)
+            admin.style.display = "none";
             dropdown.style.display = "none";
         }
     })

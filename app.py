@@ -5,6 +5,7 @@ import json
 app=Flask(__name__)
 app.config["SECRET_KEY"] = "cyb$12334@safe"
 
+
 userName = "blankUname"
 #instead of the methods I have used to validate login, one can also make use of Flask Blueprint
 #connect to database
@@ -62,10 +63,11 @@ def profile():
             points = int(data[3])
             return render_template("profile.html", name = data[0], xp = points)  
         else:
+            
             return render_template("login.html") 
     except:
         return render_template("login.html") 
-   
+    
 
 @app.route("/about", methods = ["GET", "POST"])
 def about():
@@ -149,16 +151,16 @@ def login():
     userName = uname
     cur.execute("select* FROM info WHERE uname = '%s' ;" %(userName))
     info = cur.fetchone()
-    print(info)
-    print(psw)
+
     if info is not None:
         if info[1] == psw:
-            session["userName"] = userName
-            return redirect("/profile")
+                session["userName"] = userName
+                return redirect("/profile")
         else:
             userName = "blankName"
             flash("Incorrect Login Credentials")
             return render_template("login.html")
+            
     else:
         return render_template("login.html")
          

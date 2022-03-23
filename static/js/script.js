@@ -25,7 +25,7 @@ exitBtn.onclick = ()=>{
 continueBtn.onclick = ()=>{
     infoBox.classList.remove("activeInfo"); 
     quizBox.classList.add("activeQuiz"); 
-    showQuetions(0); 
+    showQuestions(0); 
     queCounter(1); 
     startTimer(15); 
     startTimerLine(0); 
@@ -76,7 +76,7 @@ next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){ 
         que_count++; 
         que_numb++; 
-        showQuetions(que_count); 
+        showQuestions(que_count); 
         queCounter(que_numb); 
         clearInterval(counter); 
         clearInterval(counterLine); 
@@ -91,7 +91,7 @@ next_btn.onclick = ()=>{
     }
 }
 
-function showQuetions(index){
+function showQuestions(index){
     const quesText = document.querySelector(".quesText");
     // disable navbar once quiz starts
     nav.style.pointerEvents = "none";
@@ -138,7 +138,6 @@ function optionSelected(answer){
     next_btn.classList.add("show"); 
 }
 function showResult(){
-    nav.style.pointerEvents = "auto";
     const scoreText = resultBox.querySelector(".score_text");
     points= userScore*10;
     scoreText.innerHTML = '<h2>Great Work! You have scored </h2>  <b> '+ points +' </b> <h2>  points.</h2>';
