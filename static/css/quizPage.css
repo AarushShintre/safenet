@@ -31,6 +31,10 @@
     margin-left: 22%;
     margin-top: 15%;
   }
+  .content h1{
+    font-size: 40px;
+    font-weight: bold;
+  }
   .quiz-section h3, .learn-section h3, .quiz-container h4{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
