@@ -1,7 +1,7 @@
 let questions = [{
   numb: 1,
   question: "Which of the following is a type of cyber attack?",
-  answer: "All of the above",
+  answer: "All of the Above",
   options: [
     "Phishing Mails",
     "Malware",

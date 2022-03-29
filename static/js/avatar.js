@@ -55,7 +55,7 @@ function getProfile() {
         img.setAttribute('src',"../static/images/avatar7.png");
         imgLink = "avatar7.png";
     }
-    function choice7() {
+    function choice8() {
         const img = document.querySelector('#selectedPic');
         img.setAttribute('src',"../static/images/avatar8.png");
         imgLink = "avatar8.png";

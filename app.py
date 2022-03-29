@@ -82,6 +82,7 @@ def loggedIn():
         else:
             message = "false"
             return jsonify(message)  
+        
     except:
         message = "false"
         return jsonify(message)  
@@ -198,6 +199,9 @@ def register():
     else:
         return render_template("register.html")  
 
+
+
+    
 
 #logout
 @app.route("/logout",methods = ["GET", "POST"])
