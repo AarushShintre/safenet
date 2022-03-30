@@ -22,7 +22,7 @@ body{
 
 
 form {
-    box-shadow: 8px 4px 8px 4px  rgba(22, 22, 22, 0.2);
+    box-shadow: 4px  rgba(22, 22, 22, 0.2);
     border-radius: 10px;
     background-color: white;
     padding: 40px;

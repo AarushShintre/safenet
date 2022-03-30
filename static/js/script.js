@@ -9,7 +9,7 @@ const timeLine = document.querySelector("header .timeLine");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 const nav = document.querySelector(".topnav");
-const celeb = document.querySelector(".celebBox");
+
 
 infoBox.classList.add("activeInfo"); 
 continueBtn.style.pointerEvents = "none";
@@ -44,22 +44,18 @@ const quit_quiz = resultBox.querySelector(".buttons .quit");
 restart_quiz.onclick = ()=>{
     resultBox.classList.remove("activeResult"); 
     infoBox.classList.add("activeInfo");
+    timeValue = 15; 
+    que_count = 0;
+    que_numb = 1;        
+    userScore = 0;
+    widthValue = 0;
     continueBtn.onclick = ()=>{
-        infoBox.classList.remove("activeInfo");
+        infoBox.classList.remove("activeInfo"); 
         quizBox.classList.add("activeQuiz"); 
-        timeValue = 15; 
-        que_count = 0;
-        que_numb = 1;
-        userScore = 0;
-        widthValue = 0;
-        showQuetions(que_count); 
-        queCounter(que_numb); 
-        clearInterval(counter); 
-        clearInterval(counterLine); 
-        startTimer(timeValue); 
-        startTimerLine(widthValue); 
-        timeText.textContent = "Time Left"; 
-        next_btn.classList.remove("show"); 
+        showQuestions(0); 
+        queCounter(1); 
+        startTimer(15); 
+        startTimerLine(0); 
         
     }
    
@@ -140,23 +136,25 @@ function optionSelected(answer){
 function showResult(){
     const scoreText = resultBox.querySelector(".score_text");
     points= userScore*10;
-    scoreText.innerHTML = '<h2>Great Work! You have scored </h2>  <b> '+ points +' </b> <h2>  points.</h2>';
+    fetch('/quizScore', {
+        method: "POST",
+        body:userScore,
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    fetch('/quizScore')
+    .then(function (response) {
+        return response.json(); 
+    }).then(function (json){
+        totalPoints=json
+        scoreText.innerHTML = '<h2>Great Work! You have scored </h2>  <b> '+ points +' </b> <h2>  points.</h2> <br> <h2>Your total score is </h2>  <b> '+ totalPoints +'  </b> <h2>  points.</h2>';
+    });
+
+   
+
     infoBox.classList.remove("activeInfo"); 
     quizBox.classList.remove("activeQuiz"); 
     resultBox.classList.add("activeResult"); 
-    fetch('/quizScore', {
-            method: "POST",
-            body:userScore,
-            headers: {"Content-type": "application/json; charset=UTF-8"}
-        })
-        fetch('/quizScore')
-        .then(function (response) {
-            return response.text();
-        }).then(function (text) {
-            celeb.innerHTML = `
-                <h1>Great work! You have scored ${text} points in total.</h1>
-            `
-        });
+    
 }
 function startTimer(time){
     counter = setInterval(timer, 1000);

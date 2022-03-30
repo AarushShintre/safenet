@@ -2,7 +2,7 @@
 let questions = [{
   numb: 1,
   question: " Cybersecurity is the protection of ?",
-  answer: "Internet connected systems",
+  answer:"Internet connected systems",
   options: [
     "Internet connected systems",
     "Non-Internet connected systems",

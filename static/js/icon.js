@@ -7,7 +7,7 @@ fetch('/profilePic')
     }).then(function (text) {
         if( text.includes("avatar")){
             el.innerHTML = `
-            <a href = "" class="dropbtn"><img src=${text} id = "profilePhotoNav" style= "height:50px;width:50px;margin:25px; float: right;"></a>
+            <a href = "" class="dropbtn"><img src=${text} id = "profilePhotoNav" style= "height:50px;width:50px;margin:28px; float: right;"></a>
         `
         }
 });

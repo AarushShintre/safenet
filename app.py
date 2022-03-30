@@ -1,13 +1,14 @@
 import psycopg2
 from flask import *
 import json
+from passlib.hash import sha256_crypt
 
 app=Flask(__name__)
 app.config["SECRET_KEY"] = "cyb$12334@safe"
 
 
 userName = "blankUname"
-#instead of the methods I have used to validate login, one can also make use of Flask Blueprint
+
 #connect to database
 con = psycopg2.connect(
     host = "localhost",
@@ -137,26 +138,30 @@ def quizScore():
     cur.execute("select* FROM info WHERE uname='%s';"%(session["userName"]))
     data = cur.fetchone()
     scoreOriginal = int(data[3])
-    scoreValue = 10*int(request.get_json())
-    updatedValue  = scoreValue + scoreOriginal
-    cur.execute("UPDATE info SET scores = '%s'  WHERE uname = '%s';"% (updatedValue, session["userName"]))
-    con.commit()
-    return render_template("quiz1.html")
+    if request.method =="POST":
+        scoreValue = 10*int(request.get_json())
+        updatedValue  = scoreValue + scoreOriginal
+        cur.execute("UPDATE info SET scores = '%s'  WHERE uname = '%s';"% (updatedValue, session["userName"]))
+        con.commit()
+        return ""
+    else:
+        return jsonify(scoreOriginal)  
+        
         
 #login route
 @app.route("/login", methods = ["GET", "POST"])
 def login():
     global userName
     uname = str(request.form.get("uname"))
-    psw = str(request.form.get("psw"))
+    psw = str((request.form.get("psw")))
     userName = uname
     cur.execute("select* FROM info WHERE uname = '%s' ;" %(userName))
     info = cur.fetchone()
 
     if info is not None:
-        if info[1] == psw:
-                session["userName"] = userName
-                return redirect("/profile")
+        if sha256_crypt.verify(psw,info[1]):
+            session["userName"] = userName
+            return redirect("/profile")
         else:
             userName = "blankName"
             flash("Incorrect Login Credentials")
@@ -183,7 +188,7 @@ def register():
                 if len(psw) >=8:
                         userName = uname
                         pic = "blank_profile.png"
-                        cur.execute("insert into info(uname, psw, email, scores, profile) values(%s, %s ,%s, %s, %s);",(str(uname), str(psw), str(email) , 0, str(pic)))
+                        cur.execute("insert into info(uname, psw, email, scores, profile) values(%s, %s ,%s, %s, %s);",(str(uname), str(sha256_crypt.encrypt(psw)), str(email) , 0, str(pic)))
                         con.commit()
                         session["userName"] = userName
                         return render_template("profile.html", name = userName, xp= 0)                  
