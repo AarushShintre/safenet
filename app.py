@@ -135,16 +135,19 @@ def quiz4():
 
 @app.route("/quizScore", methods = ["GET", "POST"])
 def quizScore():
-    cur.execute("select* FROM info WHERE uname='%s';"%(session["userName"]))
-    data = cur.fetchone()
-    scoreOriginal = int(data[3])
     if request.method =="POST":
+        cur.execute("select* FROM info WHERE uname='%s';"%(session["userName"]))
+        data = cur.fetchone()
+        scoreOriginal = int(data[3])
         scoreValue = 10*int(request.get_json())
         updatedValue  = scoreValue + scoreOriginal
         cur.execute("UPDATE info SET scores = '%s'  WHERE uname = '%s';"% (updatedValue, session["userName"]))
         con.commit()
         return ""
     else:
+        cur.execute("select* FROM info WHERE uname='%s';"%(session["userName"]))
+        data = cur.fetchone()
+        scoreOriginal = int(data[3])
         return jsonify(scoreOriginal)  
         
         

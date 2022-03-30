@@ -17,7 +17,7 @@ continueBtn.style.opacity ="0.7";
 setTimeout(function(){
     continueBtn.style.opacity ="1";
     continueBtn.style.pointerEvents = "auto";
-},1000);
+},3000);
 exitBtn.onclick = ()=>{
     location.href = "/quiz";
 }
@@ -135,20 +135,26 @@ function optionSelected(answer){
 }
 function showResult(){
     const scoreText = resultBox.querySelector(".score_text");
+    
     points= userScore*10;
-    fetch('/quizScore', {
-        method: "POST",
-        body:userScore,
-        headers: {"Content-type": "application/json; charset=UTF-8"}
-    })
+
     fetch('/quizScore')
     .then(function (response) {
         return response.json(); 
     }).then(function (json){
-        totalPoints=json
+        totalPoints=json+points
         scoreText.innerHTML = '<h2>Great Work! You have scored </h2>  <b> '+ points +' </b> <h2>  points.</h2> <br> <h2>Your total score is </h2>  <b> '+ totalPoints +'  </b> <h2>  points.</h2>';
+        
+        fetch('/quizScore', {
+            method: "POST",
+            body:userScore,
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        })
+    
+    
     });
 
+    
    
 
     infoBox.classList.remove("activeInfo"); 
