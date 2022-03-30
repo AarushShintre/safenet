@@ -24,6 +24,6 @@ var funFactBox = document.querySelector(".funFactBox");
 
     ]
     
-    let randomNumber = Math.floor(Math.random() * 20);
+    let randomNumber = Math.floor(Math.random() * 21);
     let stringFunFact = funFacts[randomNumber];
     funFactBox.innerHTML = '<h1>Fun fact !</h1><br>'+ stringFunFact;
