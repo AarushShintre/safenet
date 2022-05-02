@@ -1,7 +1,6 @@
 import psycopg2
 from flask import *
-import json
-from passlib.hash import sha256_crypt
+import passlib.hash 
 
 app=Flask(__name__)
 app.config["SECRET_KEY"] = "cyb$12334@safe"
@@ -162,7 +161,7 @@ def login():
     info = cur.fetchone()
 
     if info is not None:
-        if sha256_crypt.verify(psw,info[1]):
+        if passlib.hash.sha256_crypt.verify(psw,info[1]):
             session["userName"] = userName
             return redirect("/profile")
         else:
@@ -191,7 +190,7 @@ def register():
                 if len(psw) >=8:
                         userName = uname
                         pic = "blank_profile.png"
-                        cur.execute("insert into info(uname, psw, email, scores, profile) values(%s, %s ,%s, %s, %s);",(str(uname), str(sha256_crypt.encrypt(psw)), str(email) , 0, str(pic)))
+                        cur.execute("insert into info(uname, psw, email, scores, profile) values(%s, %s ,%s, %s, %s);",(str(uname), str( passlib.hash.sha256_crypt.encrypt(psw)), str(email) , 0, str(pic)))
                         con.commit()
                         session["userName"] = userName
                         return render_template("profile.html", name = userName, xp= 0)                  
@@ -207,9 +206,6 @@ def register():
     else:
         return render_template("register.html")  
 
-
-
-    
 
 #logout
 @app.route("/logout",methods = ["GET", "POST"])

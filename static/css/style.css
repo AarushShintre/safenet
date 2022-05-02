@@ -1,9 +1,11 @@
-*{
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  
 }
-
 body{
-    background-color: rgb(36, 112, 199);
+    background-color: rgb(15, 4, 37);
     font-family: 'Lato', sans-serif;
     display: flexbox;
     align-content: center;
@@ -11,12 +13,9 @@ body{
     height: 100%;
     width: 100%;
     overflow: scroll;
-    margin: 0;
-
+    top: 0;
 }
-  
 
-  
 .topnav {
   align-self: start;
   width: 100%;
@@ -29,7 +28,7 @@ body{
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   float: right;
-  color:white;
+  color: rgb(187, 235, 227);
   margin-left: 28px;
   margin-right: 28px;
   margin-top: 38px;
@@ -41,7 +40,7 @@ body{
   font-family: 'Montserrat', sans-serif;
   font-weight: none;
   float: left; 
-  color:white;
+  color: rgb(187, 235, 227);
   margin-left: 18px;
   margin-top: 25px;
   text-decoration: none;

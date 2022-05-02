@@ -1,12 +1,10 @@
 
   .container{
-    top:15px;
     display: flex;
-    padding: 25px 60px 50px 60px;
     width: 100%;
-    height: fit-content;
-    text-align: left;
-    color: white;
+    height: 100%;
+    top: 0;
+    text-align: center;
   }
   
   .quizContent{
@@ -18,36 +16,38 @@
     text-justify: center;
     align-content: center;
     justify-content: center;
-    top: 20%;
     width: fit-content;
     height: fit-content;
-    background-color:  rgb(45, 197, 224);
-    color: white;
-    padding: 40px;
+    background-color:  rgb(98, 70, 210);
+    color: rgb(187, 235, 227);
+    padding: 30px;
     border-radius: 5px;
     font-size: 20px;
     float: right;
     width: 50%;
-    margin-left: 22%;
-    margin-top: 15%;
+    top: 20%;
+    margin-left: 10%;
+    position: relative;
+    
   }
   .content h1{
     font-size: 40px;
     font-weight: bold;
   }
-  .quiz-section h3, .learn-section h3, .quiz-container h4{
+  .quiz-section h3, .quiz-container h4{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     margin-top: 10px;
     margin: 28px;
     font-weight: bold;
+    color: rgb(187, 235, 227);
     }
 
 .quiz #link{
     font-size: 20px;
     position: relative;
     text-decoration: none;
-    color: white;
+    color: rgb(187, 235, 227);
     padding: 8px;
     margin-bottom: 25px;
     margin-left: 35px;
@@ -59,11 +59,17 @@
   background-color: rgba(201, 207, 212, 0.4);
 }
 
-#arrow{
-  color: white;
-}
-
 h1{
   font-size: 38px;
   font-weight: 500;
+  color: rgb(187, 235, 227);
+}
+
+.learn-section{
+  background-color: white;
+  display: flex;
+  padding: 6%;
+  margin: 7%;
+  border-radius: 10px;
+  width: 150%
 }

@@ -1,62 +1,54 @@
 {% extends "index.html" %}
 {%block content%}
+
 <link rel="stylesheet" href="../static/css/quizPage.css">
+    
 <div class="container">
-    <div class="content">
-        <h1>Courses</h1>
-        <br>
-        <div class="learn-section">
-            <h3>Basic Internet Safety</h3>
-            <div class="quiz">
-                <a href="https://www.canva.com/design/DAE5FWZpfuk/dbOwU-F78ew65a86vnSXzQ/watch?utm_content=DAE5FWZpfuk&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" target="_blank" id = "link"><i class="fa fa-arrow-right" id="arrow"></i> Basic Internet Safety</a>
-                <br>
-                <br>
-                <hr>
-            </div>
-        <div class="learn-section">
-            <h3>Cybersecurity for all</h3>
-            <div class="quiz">
-                <a href="https://www.canva.com/design/DAE51YPLL4g/uTIQDgUKw5yXHDqPnt2V1w/watch?utm_content=DAE51YPLL4g&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" id = "link" target="_blank"><i class="fa fa-arrow-right " id="arrow"></i> Cybersecurity for all</a>
-                <br>
-                <br>
-                <hr>
-                
-            </div>
+   <div class="content">
+       <h1> Learn </h1>
+       <br>
+        <div class="quiz-section">
+            <h3>Cybersecurity 101</h3>
+                <div class="quiz">
+                    <a href="/quiz1" id = "link">  Cybersecurity Basics</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
         </div>
-        <div class="learn-section">
-            <h3>Avoid Online Scams</h3>
-            <div class="quiz">
-                <a href="https://www.canva.com/design/DAE6ZZcmbNg/sZZxMNApB_n_OWCkPXO5FA/watch?utm_content=DAE6ZZcmbNg&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" target="_blank" id = "link"><i class="fa fa-arrow-right" id="arrow"></i> Quick tips</a>
-                <br>
-                <br>
-                <hr>
-            </div>
+        <div class="quiz-section">
+            <h3>Online Scams </h3>
+                <div class="quiz">
+                    <a href="/quiz2"  id = "link">  Types of online scams and avoiding them</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
         </div>
-        <div class="learn-section">
-            <h3>Social media safety </h3>
-            <div class="quiz">
-                <a href="https://www.canva.com/design/DAE67DhSXf8/ELa_mQsNGp_QvojHODQ50g/watch?utm_content=DAE67DhSXf8&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" target="_blank" id = "link"><i class="fa fa-arrow-right" id="arrow"></i> Social media safety </a>
-                <br>
-                <br>
-                <hr>
-            </div>
+        <div class="quiz-section">
+            <h3>Behaving Responsibly online</h3>
+                <div class="quiz">
+                    <a href="/quiz3" id = "link">   Online Responsibility Quiz</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
         </div>
-        
+        <div class="quiz-section">
+            <h3>Trivia</h3>
+                <div class="quiz">
+                    <a href="/quiz4" id = "link">   Trivia</a>
+                    <br>
+                    <br>
+                    <hr>
+                </div>
         </div>
-        <div class="learn-section">
-            <h3>Cyberbullying And how to prevent</h3>
-            <div class="quiz">
-                <a href="https://www.canva.com/design/DAE6mKNBUao/TFmA-OuA52Lt2dM-Sa56iA/watch?utm_content=DAE6mKNBUao&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" target="_blank" id = "link"><i class="fa fa-arrow-right" id="arrow"></i> Cyberbullying and how to prevent it </a>
-                <br>
-                <br>
-                <hr>
-            </div>
-        </div>
-    </div>
- 
+   </div>
     <div class="funFactBox">
-        <!-- JS will add content here -->
+      <!-- JS will add content here -->
      </div>
 </div>
+
 <script src="../static/js/quizPage.js"></script>
+
 {%endblock%}
