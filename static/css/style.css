@@ -29,11 +29,10 @@ body{
   text-decoration: none;
   float: right;
   color: rgb(187, 235, 227);
-  margin-left: 28px;
-  margin-right: 28px;
-  margin-top: 38px;
+  margin-top: 0.4%;
   font-size: 28px;
   transition: 0.1s;
+  padding: 30px 35px;
 }
 
 #logo{
@@ -51,13 +50,10 @@ body{
 
 
   .topnav #nav:hover, .topnav #nav:focus{
-    font-size: 31px;
-    margin-left:23px ;
-    margin-right:23px ;
-    margin-top: 33px;
+    background-color: rgb(80, 51, 138);
+    
     
   }
-
 
   .dropdown-content {
     display: none;

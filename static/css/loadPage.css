@@ -4,11 +4,11 @@
   box-sizing: border-box;
   text-align: center;
 }
-#title{
-  margin-top: 3%;
+#title{ 
   font-size: 300%;
   color: white;
   font-weight: 900;
+  position: relative;
 }
 .info-section{
   display: block;
@@ -53,6 +53,7 @@
   #fourth{
     margin-top: 4%;
     width:20%;
+    margin-bottom: 8%;
   }
 
 

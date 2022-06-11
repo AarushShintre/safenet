@@ -1,4 +1,5 @@
 var funFactBox = document.querySelector(".funFactBox");
+var score = document.querySelector(".score");
     const funFacts = [
         str1 = "Over 6,000 new computer viruses are created and released every month. 90% of emails contain some form of malware!",        
         str2 = "The Firefox logo isn’t a fox… it’s a red panda!",        
@@ -27,3 +28,9 @@ var funFactBox = document.querySelector(".funFactBox");
     let randomNumber = Math.floor(Math.random() * 21);
     let stringFunFact = funFacts[randomNumber];
     funFactBox.innerHTML = '<h1>Fun fact !</h1><br>'+ stringFunFact;
+    fetch('/quizScore')
+    .then(function (response) {
+        return response.json(); 
+    }).then(function (json){
+        score.innerHTML = `Your current score is <h2>`+json+`</h2> Points!`;
+    });
