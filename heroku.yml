@@ -1,2 +1,10 @@
 run:
   web: gunicorn app:app
+  worker:
+    command:
+      - python app.py
+    image: web
+setup:
+  addons:
+  - plan: heroku-postgresql
+    as: DATABASE
