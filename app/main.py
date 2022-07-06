@@ -1,19 +1,18 @@
 import psycopg2
-from flask import *
+from flask import Flask, render_template, redirect, session
 import passlib.hash 
+
 
 app=Flask(__name__)
 app.config["SECRET_KEY"] = "cyb$12334@safe"
 
 
-userName = "blankUname"
-
 #connect to database
 con = psycopg2.connect(
-    host = "localhost",
-    database = "SafeNet",
-    user = "postgres",
-    password = "postgres"
+    host = "ec2-54-164-40-66.compute-1.amazonaws.com",
+    database = "d34ieg3i4743a0",
+    user = "ivbdruzteynktu",
+    password = "2525a24a86c0c30ae151d137a6468d4f5bfea5b598d329c44fb4294a8d053be4"
 )
 
 cur = con.cursor()
@@ -215,5 +214,4 @@ def logout():
     session.pop("userName", None)
     return render_template("login.html")  
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
