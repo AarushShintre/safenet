@@ -18,6 +18,7 @@ con = psycopg2.connect(
 
 cur = con.cursor()
 cur.execute("SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED")
+
 #index and homepage routing
 @app.route("/", methods = ["GET", "POST"])
 def index_home():
