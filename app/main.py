@@ -2,10 +2,9 @@ import psycopg2
 from flask import Flask, render_template, redirect, session
 import passlib.hash 
 
-
 app=Flask(__name__)
-app.config["SECRET_KEY"] = "cyb$12334@safe"
 
+app.config["SECRET_KEY"] = "cyb$12334@safe"
 
 #connect to database
 con = psycopg2.connect(
